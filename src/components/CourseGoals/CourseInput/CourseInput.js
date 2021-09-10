@@ -7,12 +7,15 @@ const CourseInput = props => {
   const [enteredValue, setEnteredValue] = useState('');
 
   const goalInputChangeHandler = event => {
-    setEnteredValue(event.target.value);
+ setEnteredValue(event.target.value);
+    
   };
 
   const formSubmitHandler = event => {
     event.preventDefault();
+    if(enteredValue){
     props.onAddGoal(enteredValue);
+    }
   };
 
   return (
